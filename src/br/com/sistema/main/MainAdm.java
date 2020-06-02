@@ -6,11 +6,11 @@ import br.com.sistema.model.Administrador;
 public class MainAdm {
 
 	public static void main(String[] args) {
-		AdministradorDAO dao = new AdministradorDAO();
-		Administrador adm1 = new Administrador();
-		Administrador adm2 = new Administrador();
-		Administrador adm3 = new Administrador();
-		Administrador adm4 = new Administrador();
+		// AdministradorDAO dao = new AdministradorDAO();
+		// Administrador adm1 = new Administrador();
+		// Administrador adm2 = new Administrador();
+		// Administrador adm3 = new Administrador();
+		// Administrador adm4 = new Administrador();
 
 		// AdicionarAdministrador
 		// adm1.setNome("Ítalo Rafael");

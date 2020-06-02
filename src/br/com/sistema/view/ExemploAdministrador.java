@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -111,7 +112,7 @@ public class ExemploAdministrador extends JFrame {
 				String senha = new String(jPasswordField.getPassword());
 				Administrador adm = new Administrador();
 				adm.setNome(jTextField1.getText());
-				adm.setLogin(jTextField2.getText());
+				adm.setUsername(jTextField2.getText());
 				adm.setSenha(senha);
 
 				if (jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty() || senha.isEmpty()) {
@@ -130,7 +131,7 @@ public class ExemploAdministrador extends JFrame {
 		jButton2.setBackground(Color.LIGHT_GRAY);
 		jButton2.setBounds(120, 135, 100, 25);
 		contentPane.add(jButton2);
-		
+
 		JButton jButton3 = new JButton("VOLTAR");
 		jButton3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

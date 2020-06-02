@@ -16,11 +16,11 @@ public class AdministradorDAO {
 	}
 
 	public void adicionar(Administrador adm) {
-		String sql = "INSERT INTO administrador (nome, login, senha) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO administrador (nome, username, senha) VALUES (?, ?, ?)";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, adm.getNome());
-			stmt.setString(2, adm.getLogin());
+			stmt.setString(2, adm.getUsername());
 			stmt.setString(3, adm.getSenha());
 			stmt.execute();
 			stmt.close();
@@ -30,11 +30,11 @@ public class AdministradorDAO {
 	}
 
 	public void alterar(Long id, Administrador adm) {
-		String sql = "UPDATE administrador SET nome = ?, login = ?, senha = ? WHERE id = " + id;
+		String sql = "UPDATE administrador SET nome = ?, username = ?, senha = ? WHERE id = " + id;
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, adm.getNome());
-			stmt.setString(2, adm.getLogin());
+			stmt.setString(2, adm.getUsername());
 			stmt.setString(3, adm.getSenha());
 			stmt.execute();
 			stmt.close();

@@ -16,7 +16,7 @@ public class LoginDAO {
 	}
 
 	public boolean logar(String login, String senha) {
-		String sql = "SELECT * FROM administrador WHERE login = ? AND senha = ?";
+		String sql = "SELECT * FROM administrador WHERE username = ? AND senha = ?";
 		boolean validar = false;
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);

@@ -19,13 +19,14 @@ public class UsuarioDAO {
 	}
 
 	public void adicionar(Usuario usu) {
-		String sql = "INSERT INTO usuario (nome, telefone, saldo_negativo, saldo_positivo) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO usuario (nome, telefone, saldo_negativo, saldo_positivo, administrador_id) VALUES (?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, usu.getNome());
 			stmt.setString(2, usu.getTelefone());
 			stmt.setBigDecimal(3, usu.getSaldoNegativo());
 			stmt.setBigDecimal(4, usu.getSaldoPositivo());
+			stmt.setLong(5, usu.getAdministrador().getId());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -62,7 +63,7 @@ public class UsuarioDAO {
 	}
 
 	public List<Usuario> listar() {
-		String sql = "SELECT * FROM usuario ORDER BY nome";
+		String sql = "SELECT * FROM usuario WHERE administrador_id = ? ORDER BY nome";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 
